@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AppartementRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AppartementRepository::class)]
@@ -27,6 +29,17 @@ class Appartement
 
     #[ORM\OneToOne(mappedBy: 'idAppart', cascade: ['persist', 'remove'])]
     private ?Wifi $wifi = null;
+
+    #[ORM\OneToOne(mappedBy: 'idAppart', cascade: ['persist', 'remove'])]
+    private ?Poubelle $poubelle = null;
+
+    #[ORM\OneToMany(mappedBy: 'idAppart', targetEntity: Electromenager::class)]
+    private Collection $electromenagers;
+
+    public function __construct()
+    {
+        $this->electromenagers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -124,6 +137,58 @@ class Appartement
         }
 
         $this->wifi = $wifi;
+
+        return $this;
+    }
+
+    public function getPoubelle(): ?Poubelle
+    {
+        return $this->poubelle;
+    }
+
+    public function setPoubelle(?Poubelle $poubelle): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($poubelle === null && $this->poubelle !== null) {
+            $this->poubelle->setIdAppart(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($poubelle !== null && $poubelle->getIdAppart() !== $this) {
+            $poubelle->setIdAppart($this);
+        }
+
+        $this->poubelle = $poubelle;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Electromenager>
+     */
+    public function getElectromenagers(): Collection
+    {
+        return $this->electromenagers;
+    }
+
+    public function addElectromenager(Electromenager $electromenager): self
+    {
+        if (!$this->electromenagers->contains($electromenager)) {
+            $this->electromenagers->add($electromenager);
+            $electromenager->setIdAppart($this);
+        }
+
+        return $this;
+    }
+
+    public function removeElectromenager(Electromenager $electromenager): self
+    {
+        if ($this->electromenagers->removeElement($electromenager)) {
+            // set the owning side to null (unless already changed)
+            if ($electromenager->getIdAppart() === $this) {
+                $electromenager->setIdAppart(null);
+            }
+        }
 
         return $this;
     }

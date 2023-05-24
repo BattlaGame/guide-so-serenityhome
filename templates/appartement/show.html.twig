@@ -22,9 +22,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_appartement_index') }}">back to list</a>
-
-    <a href="{{ path('app_appartement_edit', {'id': appartement.id}) }}">edit</a>
+    <a href="{{ path('app_adresse_show', {'id': appartement.adresse.id})}}">adresse</a>
 
     {{ include('appartement/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Electromenager index{% endblock %}
+
+{% block body %}
+    <h1>Electromenager index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Lien</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for electromenager in electromenagers %}
+            <tr>
+                <td>{{ electromenager.id }}</td>
+                <td>{{ electromenager.nom }}</td>
+                <td>{{ electromenager.lien }}</td>
+                <td>{{ electromenager.description }}</td>
+                <td>
+                    <a href="{{ path('app_electromenager_show', {'id': electromenager.id}) }}">show</a>
+                    <a href="{{ path('app_electromenager_edit', {'id': electromenager.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_electromenager_new') }}">Create new</a>
+{% endblock %}
