@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Electromenager{% endblock %}
+
+{% block body %}
+    <h1>Edit Electromenager</h1>
+
+    {{ include('electromenager/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_electromenager_index') }}">back to list</a>
+
+    {{ include('electromenager/_delete_form.html.twig') }}
+{% endblock %}

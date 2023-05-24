@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Electromenager{% endblock %}
+
+{% block body %}
+    <h1>Create new Electromenager</h1>
+
+    {{ include('electromenager/_form.html.twig') }}
+
+    <a href="{{ path('app_electromenager_index') }}">back to list</a>
+{% endblock %}

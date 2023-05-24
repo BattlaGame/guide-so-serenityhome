@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Wifi{% endblock %}
+
+{% block body %}
+    <h1>Edit Wifi</h1>
+
+    {{ include('wifi/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_wifi_index') }}">back to list</a>
+
+    {{ include('wifi/_delete_form.html.twig') }}
+{% endblock %}
