@@ -59,3 +59,20 @@
 .no-margin-bottom{
     margin-bottom: 0;
 }
+
+.button-accueil{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+    width: 160px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.button-accueil:hover{
+    background-color: #000000;
+    transform: scale(1.1);
+}
