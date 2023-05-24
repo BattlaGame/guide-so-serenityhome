@@ -3,11 +3,24 @@
 {% block title %}Guide So'SerenityHome{% endblock %}
 
 {% block body %}
-    <div class="mt-10">
+    <div class="mt-5">
         <div class="text-center">
             <img src= {{asset('assets/picture/logo.png')}} width="100px">
-            <p class="color-white bold-800 font-2">Bienvenue dans l'appartements YELLOW HOME</p>
-            <p class="color-white">Nous vous souhaitons un agréable séjour, dans les appartements au coeur de la Haute Savoie proposé par So'SerenityHome</p>
+            <p class="color-white bold-600 font-4">Bienvenue dans l'appartements YELLOW HOME</p>
+            <p class="color-white font-1 mb-2">Nous vous souhaitons un agréable séjour, dans les appartements au coeur de la Haute Savoie proposé par So'SerenityHome</p>
+            <div class="">
+                <button type="button" class="button-accueil" onclick="window.location.href = '/logout';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/checkin-white.png')}} width="70px">Arrivée</button>
+                <button type="button" class="button-accueil" onclick="window.location.href = '/logout';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/valise-white.png')}} width="70px">Départ</button>
+                <button type="button" class="button-accueil" onclick="window.location.href = '/logout';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/tv-white.png')}} width="70px">Electromenager</button>
+                <button type="button" class="button-accueil" onclick="window.location.href = '/logout';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/map-white.png')}} width="70px">Autour de moi</button>
+            </div>
+            <div class="">
+                <button type="button" class="button-accueil" onclick="window.location.href = '/logout';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/parking-white.png')}} width="70px">Parking</button>
+                <button type="button" class="button-accueil" onclick="window.location.href = '/logout';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/info-white.png')}} width="70px">Infos utiles</button>
+                <button type="button" class="button-accueil" onclick="window.location.href = '/logout';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/wifi-white.png')}} width="70px">WIFI</button>
+                <button type="button" class="button-accueil" onclick="window.location.href = '/logout';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/phone-white.png')}} width="70px">Numéros utiles</button>
+
+            </div>
         </div
     </div>
 {% endblock %}
