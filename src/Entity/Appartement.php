@@ -19,6 +19,12 @@ class Appartement
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
+    #[ORM\OneToOne(mappedBy: 'idAppart', cascade: ['persist', 'remove'])]
+    private ?Parking $parking = null;
+
+    #[ORM\OneToOne(mappedBy: 'idAppart', cascade: ['persist', 'remove'])]
+    private ?Adresse $adresse = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +50,50 @@ class Appartement
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getParking(): ?Parking
+    {
+        return $this->parking;
+    }
+
+    public function setParking(?Parking $parking): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($parking === null && $this->parking !== null) {
+            $this->parking->setIdAppart(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($parking !== null && $parking->getIdAppart() !== $this) {
+            $parking->setIdAppart($this);
+        }
+
+        $this->parking = $parking;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?Adresse
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(?Adresse $adresse): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($adresse === null && $this->adresse !== null) {
+            $this->adresse->setIdAppart(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($adresse !== null && $adresse->getIdAppart() !== $this) {
+            $adresse->setIdAppart($this);
+        }
+
+        $this->adresse = $adresse;
 
         return $this;
     }

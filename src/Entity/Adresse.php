@@ -25,7 +25,7 @@ class Adresse
     #[ORM\Column(length: 255)]
     private ?string $lien = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(inversedBy: 'adresse', cascade: ['persist', 'remove'])]
     private ?Appartement $idAppart = null;
 
     public function getId(): ?int
