@@ -36,9 +36,13 @@ class Appartement
     #[ORM\OneToMany(mappedBy: 'idAppart', targetEntity: Electromenager::class)]
     private Collection $electromenagers;
 
+    #[ORM\OneToMany(mappedBy: 'idAppart', targetEntity: Checkin::class)]
+    private Collection $checkins;
+
     public function __construct()
     {
         $this->electromenagers = new ArrayCollection();
+        $this->checkins = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -187,6 +191,36 @@ class Appartement
             // set the owning side to null (unless already changed)
             if ($electromenager->getIdAppart() === $this) {
                 $electromenager->setIdAppart(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Checkin>
+     */
+    public function getCheckins(): Collection
+    {
+        return $this->checkins;
+    }
+
+    public function addCheckin(Checkin $checkin): self
+    {
+        if (!$this->checkins->contains($checkin)) {
+            $this->checkins->add($checkin);
+            $checkin->setIdAppart($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCheckin(Checkin $checkin): self
+    {
+        if ($this->checkins->removeElement($checkin)) {
+            // set the owning side to null (unless already changed)
+            if ($checkin->getIdAppart() === $this) {
+                $checkin->setIdAppart(null);
             }
         }
 

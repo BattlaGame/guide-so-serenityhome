@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ElectromenagerRepository;
+use App\Repository\CheckinRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ElectromenagerRepository::class)]
-class Electromenager
+#[ORM\Entity(repositoryClass: CheckinRepository::class)]
+class Checkin
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,13 +16,13 @@ class Electromenager
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $lien = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $photo = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\ManyToOne(inversedBy: 'electromenagers')]
+    #[ORM\ManyToOne(inversedBy: 'checkins')]
     private ?Appartement $idAppart = null;
 
     public function getId(): ?int
@@ -42,14 +42,14 @@ class Electromenager
         return $this;
     }
 
-    public function getLien(): ?string
+    public function getPhoto(): ?string
     {
-        return $this->lien;
+        return $this->photo;
     }
 
-    public function setLien(string $lien): self
+    public function setPhoto(?string $photo): self
     {
-        $this->lien = $lien;
+        $this->photo = $photo;
 
         return $this;
     }
@@ -59,7 +59,7 @@ class Electromenager
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
@@ -76,10 +76,5 @@ class Electromenager
         $this->idAppart = $idAppart;
 
         return $this;
-    }
-
-    public function __toString()
-    {
-        return $this->getNom();
     }
 }
