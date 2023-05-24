@@ -75,4 +75,5 @@ class AppartementController extends AbstractController
 
         return $this->redirectToRoute('app_appartement_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }

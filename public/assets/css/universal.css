@@ -1,0 +1,154 @@
+/*Strat Font*/
+.font-1{
+    font-size: 1.1em;
+}
+.font-2{
+    font-size: 1.2em;
+}
+.font-3{
+    font-size: 1.3em;
+}
+.font-4{
+    font-size: 1.4em;
+}
+.font-5{
+    font-size: 1.5em;
+}
+.font-6{
+    font-size: 1.6em;
+}
+.font-7{
+    font-size: 1.7em;
+}
+.font-8{
+    font-size: 1.8em;
+}
+.font-9{
+    font-size: 1.9em;
+}
+
+/*End Font*/
+
+/*Strat Bold*/
+.bold-100{
+    font-weight: 100;
+}
+.bold-200{
+    font-weight: 200;
+}
+.bold-300{
+    font-weight: 300;
+}
+.bold-400{
+    font-weight: 400;
+}
+.bold-500{
+    font-weight: 500;
+}
+.bold-600{
+    font-weight: 600;
+}
+.bold-700{
+    font-weight: 700;
+}
+.bold-800{
+    font-weight: 800;
+}
+.bold-900{
+    font-weight: 900;
+}
+/*End Bold*/
+
+/*Start Margin Left*/
+.ml-2{
+    margin-left: 20px;
+}
+.ml-3{
+    margin-left: 30px;
+}
+.ml-5{
+    margin-left: 50px;
+}
+.ml-10{
+    margin-left: 100px;
+}
+/*End Margin Left*/
+
+/*Start Margin Right*/
+.mr-3{
+    margin-right: 30px;
+}
+.mr-5{
+    margin-right: 50px;
+}
+.mr-10{
+    margin-right: 100px;
+}
+/*End Margin Right*/
+
+/*Start Margin Top*/
+.mt-3{
+    margin-top: 30px;
+}
+
+.mt-5{
+    margin-top: 50px;
+}
+.mt-10{
+    margin-top: 100px;
+}
+/*End Margin Top*/
+
+/*Start Margin Bottom*/
+.mb-1{
+    margin-bottom: 10px;
+}
+.mb-2{
+    margin-bottom: 20px;
+}
+.mb-3{
+    margin-bottom: 30px;
+}
+/*End Margin Bottom*/
+
+/*Start Padding Left*/
+.pl-5{
+    padding-left: 50px;
+}
+/*End Padding Left*/
+
+/*Start Padding Right*/
+.pr-5{
+    padding-right: 50px;
+}
+/*End Padding Right*/
+
+/*Start Padding Top*/
+.pt-0-5{
+    padding-top: 5px;
+}
+.pt-5{
+    padding-top: 50px;
+}
+.pt-10{
+    padding-top: 10px;
+}
+.pt-15{
+    padding-top: 15px;
+}
+/*End Padding Top*/
+
+/*Start Padding Bottom*/
+.pb-0-5{
+    padding-bottom: 5px;
+}
+.pb-1{
+    padding-bottom: 10px;
+}
+.pb-2{
+    padding-bottom: 20px;
+}
+.pb-15{
+    padding-bottom: 15px;
+}
+/*End Padding Bottom*/

@@ -1,0 +1,61 @@
+ body{
+    background-image: url("http://127.0.0.1:8000/assets/picture/black.jpg");
+    background-size: cover;
+    font-family: 'Montserrat';
+}
+
+.color-white{color: #FFFFFF;}
+
+.color-yellox{color: #EBA822;}
+
+.color-bluelight{color: #30459B;}
+
+.color-blue{color: #243061;}
+
+.bg-white{background-color: #FFFFFF;}
+
+.bg-yellow{background-color: #EBA822;}
+
+.bg-bluelight{background-color: #30459B;}
+
+.bg-blue{background-color: #243061;}
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.same-line{
+    display: flex;
+}
+
+.img-carre{
+    object-fit: contain;
+}
+
+.margin-auto{
+    margin: auto;
+}
+
+.item-center{
+    align-items: center;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.display-block{
+    display: block;
+}
+
+.no-margin-bottom{
+    margin-bottom: 0;
+}
