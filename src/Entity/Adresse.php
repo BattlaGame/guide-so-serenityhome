@@ -14,9 +14,6 @@ class Adresse
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $pays = null;
-
-    #[ORM\Column(length: 255)]
     private ?string $ville = null;
 
     #[ORM\Column(length: 255)]
@@ -31,18 +28,6 @@ class Adresse
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getPays(): ?string
-    {
-        return $this->pays;
-    }
-
-    public function setPays(string $pays): self
-    {
-        $this->pays = $pays;
-
-        return $this;
     }
 
     public function getVille(): ?string
@@ -91,5 +76,10 @@ class Adresse
         $this->idAppart = $idAppart;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getRue()." - ".$this->getVille();
     }
 }

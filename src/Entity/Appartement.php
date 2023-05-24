@@ -25,6 +25,9 @@ class Appartement
     #[ORM\OneToOne(mappedBy: 'idAppart', cascade: ['persist', 'remove'])]
     private ?Adresse $adresse = null;
 
+    #[ORM\OneToOne(mappedBy: 'idAppart', cascade: ['persist', 'remove'])]
+    private ?Wifi $wifi = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,6 +97,33 @@ class Appartement
         }
 
         $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getNom();
+    }
+
+    public function getWifi(): ?Wifi
+    {
+        return $this->wifi;
+    }
+
+    public function setWifi(?Wifi $wifi): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($wifi === null && $this->wifi !== null) {
+            $this->wifi->setIdAppart(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($wifi !== null && $wifi->getIdAppart() !== $this) {
+            $wifi->setIdAppart($this);
+        }
+
+        $this->wifi = $wifi;
 
         return $this;
     }

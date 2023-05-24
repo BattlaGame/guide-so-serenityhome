@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Wifi{% endblock %}
+
+{% block body %}
+    <h1>Create new Wifi</h1>
+
+    {{ include('wifi/_form.html.twig') }}
+
+    <a href="{{ path('app_wifi_index') }}">back to list</a>
+{% endblock %}

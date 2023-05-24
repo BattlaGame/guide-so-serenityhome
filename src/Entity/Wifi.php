@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ParkingRepository;
+use App\Repository\WifiRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ParkingRepository::class)]
-class Parking
+#[ORM\Entity(repositoryClass: WifiRepository::class)]
+class Wifi
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,12 +14,12 @@ class Parking
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $photo = null;
+    private ?string $mdp = null;
 
-    #[ORM\OneToOne(inversedBy: 'parking', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(inversedBy: 'wifi', cascade: ['persist', 'remove'])]
     private ?Appartement $idAppart = null;
 
     public function getId(): ?int
@@ -27,26 +27,26 @@ class Parking
         return $this->id;
     }
 
-    public function getDescription(): ?string
+    public function getNom(): ?string
     {
-        return $this->description;
+        return $this->nom;
     }
 
-    public function setDescription(string $description): self
+    public function setNom(string $nom): self
     {
-        $this->description = $description;
+        $this->nom = $nom;
 
         return $this;
     }
 
-    public function getPhoto(): ?string
+    public function getMdp(): ?string
     {
-        return $this->photo;
+        return $this->mdp;
     }
 
-    public function setPhoto(string $photo): self
+    public function setMdp(string $mdp): self
     {
-        $this->photo = $photo;
+        $this->mdp = $mdp;
 
         return $this;
     }
