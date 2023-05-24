@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Adresse;
+use App\Entity\Appartement;
 use App\Form\AdresseType;
 use App\Repository\AdresseRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -41,10 +42,11 @@ class AdresseController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_adresse_show', methods: ['GET'])]
-    public function show(Adresse $adresse): Response
+    public function show(Adresse $adresse, Appartement $appartement): Response
     {
         return $this->render('adresse/show.html.twig', [
             'adresse' => $adresse,
+            'appartement' => $appartement,
         ]);
     }
 
