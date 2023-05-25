@@ -5,13 +5,15 @@
 {% block body %}
 
     {% for electromenager in appartement.electromenagers %}
-            <tr>
-                <td>{{ electromenager.nom }}</td>
-                <td>
-                    <a href="{{ path('app_electromenager_show', {'id': electromenager.id}) }}">show</a>
-                </td>
-            </tr>
+    <table class="table">
+        <tr>
+            <td>{{ electromenager.nom }}</td>
+            <td>{{ electromenager.lien}}</td>
+            <td>{{ electromenager.description}}</td>
+        </tr>           
+    </table>          
     {% else %}
     <p>Pas d'electromenager</p>
     {% endfor %}
+
 {% endblock %}

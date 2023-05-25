@@ -76,10 +76,18 @@ class AppartementController extends AbstractController
         return $this->redirectToRoute('app_appartement_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    #[Route('/{id}/liste', name: 'app_appartement_liste', methods: ['GET'])]
-    public function liste(Appartement $appartement): Response
+    #[Route('/{id}/listeElec', name: 'app_appartement_listeElec', methods: ['GET'])]
+    public function listeElec(Appartement $appartement): Response
     {
         return $this->render('appartement/listeElectromenager.html.twig', [
+            'appartement' => $appartement,
+        ]);
+    }
+
+    #[Route('/{id}/listeCheckin', name: 'app_appartement_listeCheckin', methods: ['GET'])]
+    public function listeCheckin(Appartement $appartement): Response
+    {
+        return $this->render('appartement/listeCheckin.html.twig', [
             'appartement' => $appartement,
         ]);
     }

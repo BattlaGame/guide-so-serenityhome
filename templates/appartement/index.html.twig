@@ -23,12 +23,13 @@
                 <td>{{ appartement.photo }}</td>
                 <td>{{ appartement.adresse }}</td>
                 <td>
-                    <a href="{{ path('app_appartement_show', {'id': appartement.id}) }}">show</a>
-                    <a href="{{ path('app_appartement_edit', {'id': appartement.id}) }}">edit</a>
+                    <a href="{{ path('app_appartement_show', {'id': appartement.id}) }}">Voir</a>
+                    <a href="{{ path('app_appartement_edit', {'id': appartement.id}) }}">Editer</a>
                     <a href="{{ path('app_adresse_show', {'id': appartement.adresse.id, 'appartement': appartement}) }}">Adresse</a>
-                    <a href="{{ path('app_wifi_show', {'id': appartement.wifi.id, 'appartement': appartement}) }}">Wifi</a>
-                    <a href="{{ path('app_appartement_liste', {'id': appartement.id}) }}">Electromenager</a>
-                     <a href="{{ path('app_parking_show', {'id': appartement.parking.id, 'appartement': appartement}) }}">Parking</a>
+                    <a href="{{ path('app_wifi_show', {'id': appartement.wifi.id}) }}">Wifi</a>
+                    <a href="{{ path('app_appartement_listeElec', {'id': appartement.id}) }}">Electromenager</a>
+                    <a href="{{ path('app_parking_show', {'id': appartement.parking.id, 'appartement': appartement}) }}">Parking</a>
+                    <a href="{{ path('app_appartement_listeCheckin', {'id': appartement.id}) }}">Checkin</a>
                 </td>
             </tr>
         {% else %}

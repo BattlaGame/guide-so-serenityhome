@@ -22,13 +22,17 @@
     <link href="{{ asset('assets/css/style2.css')}}" rel="stylesheet">
     <link href="{{ asset('assets/js/script.js')}}" rel="stylesheet">
 </head>
+
 {% if appartement|default(null) is not null %}
 <body style="background-image: url('{{ appartement.photo }}');" class="">
-   
 {% else %}
-<body>
-
+    {% if test.idAppart|default(null) is not null %}
+        <body style="background-image: url('{{ test.idAppart.photo }}');" class="">
+    {% else %}
+        <body>
+    {% endif %}
 {% endif %}
+
 
     <!-- Topbar Start --> 
     <!-- Topbar End -->
