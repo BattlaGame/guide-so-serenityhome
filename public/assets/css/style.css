@@ -3,6 +3,7 @@
     background-size: cover;
     font-family: 'Montserrat';
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 .color-white{color: #FFFFFF;}
