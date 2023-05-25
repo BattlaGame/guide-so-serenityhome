@@ -1,9 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Parking{% endblock %}
+{% block title %}Guide So'SerenityHome | Parking{% endblock %}
 
 {% block body %}
-        {{ parking.photo }}
     <div class=" mt-5">
         <div class="text-center">
             <img  src= {{asset('assets/picture/icon/parking-white.png')}} width="50px">
@@ -21,7 +20,7 @@
                         <p class="nmt nmb color-yellow ml-2 bold-600 font-1">{{ parking.description }}</p>
                     </div>
                 {% else %}
-                    <p>Pas d'electromenager</p>
+                    <p>Pas de parking</p>
                 {% endfor %}
             </div>
         </div>

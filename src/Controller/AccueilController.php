@@ -42,6 +42,14 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+    #[Route('/autour', name: 'app_autour')]
+    public function autour(): Response
+    {
+        return $this->render('siteFront/autour.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 }
 
 
