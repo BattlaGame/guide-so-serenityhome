@@ -27,10 +27,18 @@ class AccueilController extends AbstractController
         ]);
     }
 
-    #[Route('/info', name: 'app_indo')]
+    #[Route('/info', name: 'app_info')]
     public function info(): Response
     {
         return $this->render('siteFront/info.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+    #[Route('/checkout', name: 'app_checkout')]
+    public function checkout(): Response
+    {
+        return $this->render('siteFront/checkout.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }
