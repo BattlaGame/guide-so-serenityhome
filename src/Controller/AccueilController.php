@@ -14,7 +14,7 @@ class AccueilController extends AbstractController
     #[Route('/accueil', name: 'app_accueil')]
     public function accueil(): Response
     {
-        return $this->render('accueil/accueil.html.twig', [
+        return $this->render('siteFront/accueil.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }
@@ -22,15 +22,7 @@ class AccueilController extends AbstractController
     #[Route('/numero', name: 'app_numero')]
     public function numero(): Response
     {
-        return $this->render('accueil/numero.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
-    }
-
-    #[Route('/wifi', name: 'app_wifi')]
-    public function wifi(): Response
-    {
-        return $this->render('accueil/wifi.html.twig', [
+        return $this->render('siteFront/numero.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }
@@ -38,7 +30,7 @@ class AccueilController extends AbstractController
     #[Route('/info', name: 'app_indo')]
     public function info(): Response
     {
-        return $this->render('accueil/info.html.twig', [
+        return $this->render('siteFront/info.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }

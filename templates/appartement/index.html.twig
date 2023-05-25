@@ -30,6 +30,7 @@
                     <a href="{{ path('app_appartement_listeElec', {'id': appartement.id}) }}">Electromenager</a>
                     <a href="{{ path('app_parking_show', {'id': appartement.parking.id, 'appartement': appartement}) }}">Parking</a>
                     <a href="{{ path('app_appartement_listeCheckin', {'id': appartement.id}) }}">Checkin</a>
+                    <a href="{{ path('app_poubelle_show', {'id': appartement.poubelle.id}) }}">Poubelle</a>
                 </td>
             </tr>
         {% else %}
