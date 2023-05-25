@@ -8,7 +8,7 @@
             <tr>
                 <td>{{ checkin.nom }}</td>
                 <td>
-                    <a href="{{ path('app_checkin_show', {'id': checkin.id, 'appartement': appartement}) }}">show</a>
+                    <a href="{{ path('app_checkin_show', {'id': checkin.id}) }}">show</a>
                 </td>
             </tr>
     {% else %}

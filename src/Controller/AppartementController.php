@@ -43,7 +43,7 @@ class AppartementController extends AbstractController
     #[Route('/{id}', name: 'app_appartement_show', methods: ['GET'])]
     public function show(Appartement $appartement): Response
     {
-        return $this->render('appartement/show.html.twig', [
+        return $this->render('siteFront/appartement.html.twig', [
             'appartement' => $appartement,
         ]);
     }
@@ -79,7 +79,7 @@ class AppartementController extends AbstractController
     #[Route('/{id}/listeElec', name: 'app_appartement_listeElec', methods: ['GET'])]
     public function listeElec(Appartement $appartement): Response
     {
-        return $this->render('appartement/listeElectromenager.html.twig', [
+        return $this->render('siteFront/listeElectromenager.html.twig', [
             'appartement' => $appartement,
         ]);
     }
@@ -87,7 +87,7 @@ class AppartementController extends AbstractController
     #[Route('/{id}/listeCheckin', name: 'app_appartement_listeCheckin', methods: ['GET'])]
     public function listeCheckin(Appartement $appartement): Response
     {
-        return $this->render('appartement/listeCheckin.html.twig', [
+        return $this->render('siteFront/listeCheckin.html.twig', [
             'appartement' => $appartement,
         ]);
     }
