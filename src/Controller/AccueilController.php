@@ -18,6 +18,30 @@ class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
+
+    #[Route('/numero', name: 'app_numero')]
+    public function numero(): Response
+    {
+        return $this->render('accueil/numero.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+    #[Route('/wifi', name: 'app_wifi')]
+    public function wifi(): Response
+    {
+        return $this->render('accueil/wifi.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
+
+    #[Route('/info', name: 'app_indo')]
+    public function info(): Response
+    {
+        return $this->render('accueil/info.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+    }
 }
 
 

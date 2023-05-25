@@ -1,12 +1,13 @@
  body{
-    background-image: url("");
+    background-image: url("http://127.0.0.1:8000/assets/picture/black.jpg");
     background-size: cover;
     font-family: 'Montserrat';
+    margin: 0;
 }
 
 .color-white{color: #FFFFFF;}
 
-.color-yellox{color: #EBA822;}
+.color-yellow{color: #EBA822;}
 
 .color-bluelight{color: #30459B;}
 
@@ -75,4 +76,65 @@
 .button-accueil:hover{
     background-color: #000000;
     transform: scale(1.1);
+}
+
+.container{
+    border-radius: 20px;
+    width:1000px;
+    margin:100px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+}
+
+.div-50{
+    width: 60%;
+}
+
+.nmb{
+    margin-bottom: 0;
+}
+
+.nmt{
+    margin-top: 0;
+}
+
+.shadow-container{
+    box-shadow: 1px 1px 12px #000000;
+    border-radius: 20px;
+    width:600px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    margin-bottom: 50px;
+}
+
+.prev-button{
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.prev-button:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.button-page{
+    background-color: #EBA822;
+    color: #30459B;
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+    width: 160px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.button-page:hover{
+    transform: scale(1.1);
+}
+
+.opt{
+    padding-bottom: 41px;
 }
