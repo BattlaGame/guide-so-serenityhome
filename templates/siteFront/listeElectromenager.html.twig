@@ -3,17 +3,29 @@
 {% block title %}Liste de l'Electromenager{% endblock %}
 
 {% block body %}
+    <div class=" mt-5">
+        <div class="text-center">
+            <img  src= {{asset('assets/picture/icon/tv-white.png')}} width="50px">
+            <p class="color-white font-1 bold-700 no-margin">Electromenager</p>
+        </div>
+        <div class="container">
+            <div class="div-50 margin-auto">
+                {% for electromenager in appartement.electromenagers %}
+                    <p class="bold-700 font-2 color-bluelight">{{ electromenager.nom }} :</p>
+                    <div class="dropdown shadow-container text-center">
+                    <button class="mainmenubtn"><img class="" src= {{asset('assets/picture/fleche-bas.png')}} width="40px"></button>
+                    <div class="dropdown-child ">
+                        <iframe width="560" height="315" src="{{ electromenager.lien }}" title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <p class="nmt nmb color-yellow bold-600 font-1">{{ electromenager.description }}</p>
+                    </div>
+                    </div>
 
-    {% for electromenager in appartement.electromenagers %}
-    <table class="table">
-        <tr>
-            <td>{{ electromenager.nom }}</td>
-            <td>{{ electromenager.lien}}</td>
-            <td>{{ electromenager.description}}</td>
-        </tr>           
-    </table>          
-    {% else %}
-    <p>Pas d'electromenager</p>
-    {% endfor %}
+                    {% else %}
+                <p>Pas d'electromenager</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>          
 
 {% endblock %}
