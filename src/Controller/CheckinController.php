@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Appartement;
 use App\Entity\Checkin;
 use App\Form\CheckinType;
 use App\Repository\CheckinRepository;
@@ -44,7 +45,7 @@ class CheckinController extends AbstractController
     public function show(Checkin $checkin): Response
     {
         return $this->render('checkin/show.html.twig', [
-            'checkin' => $checkin,
+            'checkin' => $checkin
         ]);
     }
 

@@ -42,11 +42,10 @@ class AdresseController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_adresse_show', methods: ['GET'])]
-    public function show(Adresse $adresse, Appartement $appartement): Response
+    public function show(Adresse $adresse): Response
     {
         return $this->render('adresse/show.html.twig', [
-            'adresse' => $adresse,
-            'appartement' => $appartement,
+            'adresse' => $adresse
         ]);
     }
 

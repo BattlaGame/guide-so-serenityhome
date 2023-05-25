@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poubelle{% endblock %}
+
+{% block body %}
+    <h1>Poubelle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ poubelle.id }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ poubelle.photo }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ poubelle.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_poubelle_index') }}">back to list</a>
+
+    <a href="{{ path('app_poubelle_edit', {'id': poubelle.id}) }}">edit</a>
+
+    {{ include('poubelle/_delete_form.html.twig') }}
+{% endblock %}

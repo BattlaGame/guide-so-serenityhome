@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Poubelle index{% endblock %}
+
+{% block body %}
+    <h1>Poubelle index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Photo</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for poubelle in poubelles %}
+            <tr>
+                <td>{{ poubelle.id }}</td>
+                <td>{{ poubelle.photo }}</td>
+                <td>{{ poubelle.description }}</td>
+                <td>
+                    <a href="{{ path('app_poubelle_show', {'id': poubelle.id}) }}">show</a>
+                    <a href="{{ path('app_poubelle_edit', {'id': poubelle.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_poubelle_new') }}">Create new</a>
+{% endblock %}

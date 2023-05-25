@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Appartement;
 use App\Entity\Parking;
 use App\Form\ParkingType;
 use App\Repository\ParkingRepository;
@@ -45,6 +46,7 @@ class ParkingController extends AbstractController
     {
         return $this->render('parking/show.html.twig', [
             'parking' => $parking,
+            'test' => $parking,
         ]);
     }
 

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Guide So'SerenityHome{% endblock %}
+{% block title %}Wifi{% endblock %}
 
 {% block body %}
     <div class=" mt-5">
@@ -12,11 +12,11 @@
             <div class="div-50 margin-auto">
                 <p class="bold-700 font-2 color-bluelight">Nom du wifi :</p>
                 <div class="shadow-container text-center">
-                    <p class="nmt nmb color-yellow bold-600 font-1">NOM-WIFI</p>
+                    <p class="nmt nmb color-yellow bold-600 font-1">{{ wifi.nom }}</p>
                 </div>
                 <p class="bold-700 font-2 color-bluelight">Clé du wifi :</p>
                 <div class="shadow-container text-center">
-                    <p class="nmt nmb color-yellow bold-600 font-1">MDP-WIFI</p>
+                    <p class="nmt nmb color-yellow bold-600 font-1">{{ wifi.mdp }}</p>
                 </div>
             </div>
         </div>

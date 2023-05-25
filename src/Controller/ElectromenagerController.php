@@ -42,11 +42,11 @@ class ElectromenagerController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_electromenager_show', methods: ['GET'])]
-    public function show(Electromenager $electromenager, Appartement $appartement): Response
+    public function show(Electromenager $electromenager): Response
     {
         return $this->render('electromenager/show.html.twig', [
             'electromenager' => $electromenager,
-            'appartement' => $appartement,
+            'test' => $electromenager
         ]);
     }
 

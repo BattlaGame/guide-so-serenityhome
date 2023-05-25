@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de l'Electromenager{% endblock %}
+
+{% block body %}
+
+    {% for checkin in appartement.checkins %}
+            <tr>
+                <td>{{ checkin.nom }}</td>
+                <td>
+                    <a href="{{ path('app_checkin_show', {'id': checkin.id, 'appartement': appartement}) }}">show</a>
+                </td>
+            </tr>
+    {% else %}
+    <p>Pas de checkin</p>
+    {% endfor %}
+{% endblock %}
