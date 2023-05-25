@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide So'SerenityHome{% endblock %}
+
+{% block body %}
+    <div class=" mt-5">
+        <div class="text-center">
+            <img  src= {{asset('assets/picture/icon/phone-white.png')}} width="50px">
+            <p class="color-white font-1 bold-700 no-margin">Numéros utiles</p>
+        </div>
+        <div class="container">
+            <div class="div-50 margin-auto">
+                <p class="bold-700 font-2 color-bluelight">Numéros d’urgences</p>
+                <div class="shadow-container same-line item-center">
+                    <div class="margin-auto text-center">
+                        <img  src= {{asset('assets/picture/icon/fireman.png')}} width="50px">
+                        <p class="nmt nmb color-yellow bold-600 font-1">18</p>
+                    </div>
+                    <div class="margin-auto text-center">
+                        <img  src= {{asset('assets/picture/icon/police.png')}} width="50px">
+                        <p class="nmt nmb color-yellow bold-600 font-1">17</p>
+                    </div>
+                    <div class="margin-auto text-center">
+                        <img  src= {{asset('assets/picture/icon/ambulance.png')}} width="50px">
+                        <p class="nmt nmb color-yellow bold-600 font-1">112</p>
+                    </div>
+                </div>
+                <p class="nmb bold-700 font-2 color-bluelight">Sonia Vidal</p>
+                <p class="nmt mb-1 color-yellow">So'SerenityHome</p>
+                <div class="shadow-container same-line item-center">
+                    <img  src= {{asset('assets/picture/icon/call.png')}} width="50px">
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">+33 6 84 64 25 86</p>
+                </div>
+                <p class="bold-700 font-2 nmb color-bluelight">Service des urgences</p>
+                <p class="nmt color-yellow">Hôpital de sallanche</p>
+                <div class="shadow-container same-line item-center">
+                    <img  src= {{asset('assets/picture/icon/call.png')}} width="50px">
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">+33 4 50 47 30 50</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

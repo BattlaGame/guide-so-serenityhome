@@ -24,7 +24,9 @@
 </head>
 
 {% if appartement|default(null) is not null %}
+
 <body style="background-image: url('{{ appartement.photo }}');" class="">
+
 {% else %}
     {% if test.idAppart|default(null) is not null %}
         <body style="background-image: url('{{ test.idAppart.photo }}');" class="">
@@ -33,8 +35,10 @@
     {% endif %}
 {% endif %}
 
-
     <!-- Topbar Start --> 
+
+    <!-- Topbar Start -->
+    <a href="/accueil"><img class="prev-button mt-1" src= {{asset('assets/picture/fleche-retour.png')}} width=50px></a>
     <!-- Topbar End -->
 
     {% block body %}

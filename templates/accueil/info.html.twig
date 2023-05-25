@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide So'SerenityHome{% endblock %}
+
+{% block body %}
+    <div class=" mt-5">
+        <div class="text-center">
+            <img  src= {{asset('assets/picture/icon/info-white.png')}} width="50px">
+            <p class="color-white font-1 bold-700 no-margin">Infos utiles</p>
+        </div>
+        <div class="container">
+            <div class="text-center margin-auto pb-3">
+                <button type="button" class="button-page" onclick="window.location.href = '#service';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/serviette.png')}} width="70px">Services sur place</button>
+                <button type="button" class="button-page opt" onclick="window.location.href = '#animal';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/animal.png')}} width="70px">Animaux</button>
+                <button type="button" class="button-page opt" onclick="window.location.href = '#poubelle';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/trash.png')}} width="70px">Poubelles</button>
+                <button type="button" class="button-page" onclick="window.location.href = '#planete';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/earth.png')}} width="70px">Protegéons notre planète</button>
+            </div>
+            <div class="div-50 margin-auto">
+                <div class="same-line mb-1 item-center" id="service">
+                    <img  class="" src= {{asset('assets/picture/icon/serviette.png')}} width="62px">
+                    <p class="bold-700 font-2 color-bluelight no-margin">Service sur place</p>
+                </div>
+                <div class="shadow-container item-center">
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">+33 4 50 47 30 50</p>
+                </div>
+                <div class="same-line mb-1 item-center" id="animal">
+                    <img class=""  src= {{asset('assets/picture/icon/animal.png')}} width="62px">
+                    <div class="display-block item-center">
+                        <p class=" bold-700 font-2 color-bluelight no-margin">Animaux</p>
+                        <p class="color-yellow no-margin">Informations</p>
+                    </div>
+                </div>
+                <div class="shadow-container item-center">
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">Les animaux de compagnie peuvent être acceptés sur demande, à la condition expresse qu’ils soient propres, pour un coût supplémentaire de 10€/jour sur votre réservation.
+                    Votre animal devra rester en permanence sous votre surveillance, en aucun cas il ne devra rester seul dans l’appartement ou dans le jardin, même pour une courte durée.
+                    Toute dégradation causée par votre animal vous sera facturée ou déduite de votre caution.
+                    Les lits, fauteuils et canapés lui sont interdits.
+                    Les paniers, coussins, gamelles, serviettes et autres matériels pour animaux ne sont pas fournis, merci de prévoir les vôtres et de ne pas utiliser de vaisselle ou de textiles que vous pourriez trouver dans l’appartement.
+                    Votre chien pourra profiter de notre jardin clôturé, toujours sous votre surveillance car il contient un petit bassin dans lequel il pourrait tomber, et des fleurs à protéger.
+                    Il pourra rencontrer d'autres (gentils) chiens dans le jardin.
+                    Pensez bien sûr à ramasser ses déjections après son passage !
+                    Nous vous souhaitons un excellent séjour avec votre meilleur ami !</p>
+                </div>
+                <div class="same-line mb-1 item-center" id="poubelle">
+                    <img  class="" src= {{asset('assets/picture/icon/trash.png')}} width="62px">
+                    <div class="display-block item-center">
+                        <p class=" bold-700 font-2 color-bluelight no-margin">Poubelles</p>
+                        <p class="color-yellow no-margin">Où jeter vos poubelles</p>
+                    </div>
+                </div>
+                <div class="shadow-container item-center">
+                    <p class="nmt nmb color-yellow bold-600 font-1 ml-2">+33 6 84 64 25 86</p>
+                </div>
+                <div class="same-line mb-1 item-center" id="planete">
+                    <img  class="" src= {{asset('assets/picture/icon/earth.png')}} width="62px">
+                    <p class="bold-700 font-2 color-bluelight no-margin">Protegéons notre planete</p>
+                </div>
+                <div class="shadow-container item-center">
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">L'eau et l'énergie sont notre avenir, économisons-les!</p><br>
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">- ne pas laisser couler l'eau inutilement</p>
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">- programmer les radiateurs à 19° maximum</p>
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">- si le chauffage est en marche, refermer les fenêtres après avoir aéré l'appartement.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
