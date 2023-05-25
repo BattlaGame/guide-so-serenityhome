@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Appartement;
 use App\Entity\Parking;
 use App\Form\ParkingType;
 use App\Repository\ParkingRepository;
@@ -41,10 +42,11 @@ class ParkingController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_parking_show', methods: ['GET'])]
-    public function show(Parking $parking): Response
+    public function show(Parking $parking, Appartement $appartement): Response
     {
         return $this->render('parking/show.html.twig', [
             'parking' => $parking,
+            'appartement' => $appartement,
         ]);
     }
 

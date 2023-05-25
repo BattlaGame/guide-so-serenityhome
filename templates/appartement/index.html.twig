@@ -28,6 +28,7 @@
                     <a href="{{ path('app_adresse_show', {'id': appartement.adresse.id, 'appartement': appartement}) }}">Adresse</a>
                     <a href="{{ path('app_wifi_show', {'id': appartement.wifi.id, 'appartement': appartement}) }}">Wifi</a>
                     <a href="{{ path('app_appartement_liste', {'id': appartement.id}) }}">Electromenager</a>
+                     <a href="{{ path('app_parking_show', {'id': appartement.parking.id, 'appartement': appartement}) }}">Parking</a>
                 </td>
             </tr>
         {% else %}
