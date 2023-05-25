@@ -12,6 +12,7 @@
                 <th>Nom</th>
                 <th>Lien</th>
                 <th>Description</th>
+                <th>Appartement</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                 <td>{{ electromenager.nom }}</td>
                 <td>{{ electromenager.lien }}</td>
                 <td>{{ electromenager.description }}</td>
+                <td>{{ electromenager.idAppart }}</td>
                 <td>
                     <a href="{{ path('app_electromenager_show', {'id': electromenager.id}) }}">show</a>
                     <a href="{{ path('app_electromenager_edit', {'id': electromenager.id}) }}">edit</a>

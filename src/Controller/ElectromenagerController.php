@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Appartement;
 use App\Entity\Electromenager;
 use App\Form\ElectromenagerType;
 use App\Repository\ElectromenagerRepository;
@@ -41,10 +42,11 @@ class ElectromenagerController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_electromenager_show', methods: ['GET'])]
-    public function show(Electromenager $electromenager): Response
+    public function show(Electromenager $electromenager, Appartement $appartement): Response
     {
         return $this->render('electromenager/show.html.twig', [
             'electromenager' => $electromenager,
+            'appartement' => $appartement,
         ]);
     }
 
