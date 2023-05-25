@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de l'Electromenager{% endblock %}
+
+{% block body %}
+
+    {% for electromenager in appartement.electromenagers %}
+            <tr>
+                <td>{{ electromenager.nom }}</td>
+                <td>
+                    <a href="{{ path('app_electromenager_show', {'id': electromenager.id}) }}">show</a>
+                </td>
+            </tr>
+    {% else %}
+    <p>Pas d'electromenager</p>
+    {% endfor %}
+{% endblock %}

@@ -3,13 +3,14 @@
 {% block title %}Wifi{% endblock %}
 
 {% block body %}
+<div style="background-color:#FFFFFF;">
     <h1>Wifi</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ wifi.id }}</td>
+                <th>Appartement</th>
+                <td>{{ appartement.nom }}</td>
             </tr>
             <tr>
                 <th>Nom</th>
@@ -21,10 +22,5 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('app_wifi_index') }}">back to list</a>
-
-    <a href="{{ path('app_wifi_edit', {'id': wifi.id}) }}">edit</a>
-
-    {{ include('wifi/_delete_form.html.twig') }}
+</div>
 {% endblock %}

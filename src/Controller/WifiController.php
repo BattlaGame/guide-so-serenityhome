@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Appartement;
 use App\Entity\Wifi;
 use App\Form\WifiType;
 use App\Repository\WifiRepository;
@@ -41,10 +42,11 @@ class WifiController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_wifi_show', methods: ['GET'])]
-    public function show(Wifi $wifi): Response
+    public function show(Wifi $wifi, Appartement $appartement): Response
     {
         return $this->render('wifi/show.html.twig', [
             'wifi' => $wifi,
+            'appartement' => $appartement,
         ]);
     }
 
