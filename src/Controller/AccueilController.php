@@ -11,26 +11,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AccueilController extends AbstractController
 {
-    #[Route('/accueil', name: 'app_accueil')]
-    public function accueil(): Response
-    {
-        return $this->render('siteFront/accueil.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
-    }
 
     #[Route('/numero', name: 'app_numero')]
     public function numero(): Response
     {
         return $this->render('siteFront/numero.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
-    }
-
-    #[Route('/info', name: 'app_indo')]
-    public function info(): Response
-    {
-        return $this->render('siteFront/info.html.twig', [
             'controller_name' => 'AccueilController',
         ]);
     }

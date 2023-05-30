@@ -14,12 +14,15 @@ class Poubelle
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $photo = null;
+    private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\OneToOne(inversedBy: 'poubelle', cascade: ['persist', 'remove'])]
+    #[ORM\Column(length: 255)]
+    private ?string $photo = null;
+
+    #[ORM\ManyToOne(inversedBy: 'poubelles')]
     private ?Appartement $idAppart = null;
 
     public function getId(): ?int
@@ -27,14 +30,14 @@ class Poubelle
         return $this->id;
     }
 
-    public function getPhoto(): ?string
+    public function getNom(): ?string
     {
-        return $this->photo;
+        return $this->nom;
     }
 
-    public function setPhoto(string $photo): self
+    public function setNom(string $nom): self
     {
-        $this->photo = $photo;
+        $this->nom = $nom;
 
         return $this;
     }
@@ -47,6 +50,18 @@ class Poubelle
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }

@@ -40,14 +40,6 @@ class AppartementController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_appartement_show', methods: ['GET'])]
-    public function show(Appartement $appartement): Response
-    {
-        return $this->render('siteFront/appartement.html.twig', [
-            'appartement' => $appartement,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_appartement_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Appartement $appartement, AppartementRepository $appartementRepository): Response
     {
@@ -75,23 +67,6 @@ class AppartementController extends AbstractController
 
         return $this->redirectToRoute('app_appartement_index', [], Response::HTTP_SEE_OTHER);
     }
-
-    #[Route('/{id}/listeElec', name: 'app_appartement_listeElec', methods: ['GET'])]
-    public function listeElec(Appartement $appartement): Response
-    {
-        return $this->render('siteFront/listeElectromenager.html.twig', [
-            'appartement' => $appartement,
-        ]);
-    }
-
-    #[Route('/{id}/listeCheckin', name: 'app_appartement_listeCheckin', methods: ['GET'])]
-    public function listeCheckin(Appartement $appartement): Response
-    {
-        return $this->render('siteFront/listeCheckin.html.twig', [
-            'appartement' => $appartement,
-        ]);
-    }
-
 }
 
 

@@ -16,7 +16,7 @@
             </div>
             <div class="">
                 <button type="button" class="button-accueil" onclick="window.location.href = '{{ path('app_parking_show', {'id': appartement.parking.id}) }}';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/parking-white.png')}} width="70px">Parking</button>
-                <button type="button" class="button-accueil" onclick="window.location.href = '/info';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/info-white.png')}} width="70px">Infos utiles</button>
+                <button type="button" class="button-accueil" onclick="window.location.href = '{{ path('app_appartement_info', {'nom': appartement.nom, 'poubelle': appartement.poubelle}) }}';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/info-white.png')}} width="70px">Infos utiles</button>
                 <button type="button" class="button-accueil" onclick="window.location.href = '{{ path('app_wifi_show', {'id': appartement.wifi.id})}}';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/wifi-white.png')}} width="70px">WIFI</button>
                 <button type="button" class="button-accueil" onclick="window.location.href = '/numero';"><img class="display-block margin-auto pb-1" src= {{asset('assets/picture/icon/phone-white.png')}} width="70px">Numéros utiles</button>
 

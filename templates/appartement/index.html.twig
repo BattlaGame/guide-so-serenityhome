@@ -23,7 +23,7 @@
                 <td>{{ appartement.photo }}</td>
                 <td>{{ appartement.adresse }}</td>
                 <td>
-                    <a href="{{ path('app_appartement_show', {'id': appartement.id}) }}">Voir</a>
+                    <a href="{{ path('app_appartement_show', {'nom': appartement.nom}) }}">Voir</a>
                     <a href="{{ path('app_appartement_edit', {'id': appartement.id}) }}">Editer</a>
                     <a href="{{ path('app_adresse_show', {'id': appartement.adresse.id}) }}">Adresse</a>
                     <a href="{{ path('app_wifi_show', {'id': appartement.wifi.id}) }}">Wifi</a>
