@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide So'SerenityHome | Checkout{% endblock %}
+
+{% block body %}
+    <div class=" mt-5">
+        <div class="text-center">
+            <img  src= {{asset('assets/picture/icon/valise-white.png')}} width="50px">
+            <p class="color-white font-1 bold-700 no-margin">Checkout</p>
+        </div>
+        <div class="container">
+            <div class="div-50 margin-auto">
+                <div class="same-line mb-1 item-center">
+                    <img  class="" src= {{asset('assets/picture/icon/valise-blue.png')}} width="62px">
+                    <p class="bold-700 font-2 color-bluelight no-margin">Checkout</p>
+                </div>
+                <div class="shadow-container item-center">
+                    <p class="nmt nmb color-yellow ml-2 bold-700 font-2">Le checkout est à 10h maximum</p>
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">(heure d'arrivée du prestataire de ménage)</p><br>
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">Déposer les clés (badge et clé d'appartement) dans le boite à clés</p><br>
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">Une fois dedans veillez a ce que la boite soit bien refermée.</p><br>
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">Merci !</p><br>
+                    <p class="nmt nmb color-yellow ml-2 bold-700 font-2">A la prochaine !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

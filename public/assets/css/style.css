@@ -1,8 +1,8 @@
  body{
-    background-image: url("http://127.0.0.1:8000/assets/picture/black.jpg");
     background-size: cover;
     font-family: 'Montserrat';
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 .color-white{color: #FFFFFF;}
@@ -137,4 +137,24 @@
 
 .opt{
     padding-bottom: 41px;
+}
+
+.mainmenubtn {
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.dropdown {
+    display: inline-block;
+}
+.dropdown-child {
+    display: none;
+}
+.dropdown-child a {
+    display: block;
+}
+.dropdown:hover .dropdown-child {
+    display: block;
 }

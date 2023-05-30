@@ -1,30 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Parking{% endblock %}
+{% block title %}Guide So'SerenityHome | Parking{% endblock %}
 
 {% block body %}
-    <h1>Parking</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ parking.id }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ parking.description }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                <td>{{ parking.photo }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_parking_index') }}">back to list</a>
-
-    <a href="{{ path('app_parking_edit', {'id': parking.id}) }}">edit</a>
-
-    {{ include('parking/_delete_form.html.twig') }}
+    <div class=" mt-5">
+        <div class="text-center">
+            <img  src= {{asset('assets/picture/icon/parking-white.png')}} width="50px">
+            <p class="color-white font-1 bold-700 no-margin">Parking</p>
+        </div>
+        <div class="container">
+            <div class="div-50 margin-auto">
+                <div class="same-line mb-1 item-center">
+                    <img  class="" src= {{asset('assets/picture/icon/car.png')}} width="62px">
+                    <p class="bold-700 font-2 color-bluelight no-margin">Parking</p>
+                </div>
+                {% for parking in appartement.parking %}
+                    <div class="shadow-container item-center text-center">
+                        <img  src= {{ parking.photo }} width="100px">
+                        <p class="nmt nmb color-yellow ml-2 bold-600 font-1">{{ parking.description }}</p>
+                    </div>
+                {% else %}
+                    <p>Pas de parking</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
