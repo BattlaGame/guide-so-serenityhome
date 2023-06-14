@@ -41,15 +41,6 @@ class ParkingController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_parking_show', methods: ['GET'])]
-    public function show(Parking $parking): Response
-    {
-        return $this->render('siteFront/parking.html.twig', [
-            'parking' => $parking,
-            'test' => $parking,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_parking_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Parking $parking, ParkingRepository $parkingRepository): Response
     {
