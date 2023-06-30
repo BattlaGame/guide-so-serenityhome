@@ -3,7 +3,9 @@
 {% block title %}Checkin index{% endblock %}
 
 {% block body %}
+
     <h1>Checkin index</h1>
+    <a href="{{ path('app_appartement_index') }}">Liste des appartements</a>
 
     <table class="table">
         <thead>
@@ -12,6 +14,7 @@
                 <th>Nom</th>
                 <th>Photo</th>
                 <th>Description</th>
+                <th>Appartement</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +25,7 @@
                 <td>{{ checkin.nom }}</td>
                 <td>{{ checkin.photo }}</td>
                 <td>{{ checkin.description }}</td>
+                <td>{{ checkin.idAppart }}</td>
                 <td>
                     <a href="{{ path('app_checkin_show', {'id': checkin.id}) }}">show</a>
                     <a href="{{ path('app_checkin_edit', {'id': checkin.id}) }}">edit</a>
@@ -35,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_checkin_new') }}">Create new</a>
+    <a href="{{ path('app_checkin_new') }}">Créer un nouveau checkin</a>
 {% endblock %}

@@ -21,8 +21,7 @@ class Appartement
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
-    #[ORM\OneToOne(mappedBy: 'idAppart', cascade: ['persist', 'remove'])]
-    private ?Parking $parking = null;
+   
 
     #[ORM\OneToOne(mappedBy: 'idAppart', cascade: ['persist', 'remove'])]
     private ?Adresse $adresse = null;
@@ -38,6 +37,9 @@ class Appartement
 
     #[ORM\OneToMany(mappedBy: 'idAppart', targetEntity: Poubelle::class)]
     private Collection $poubelles;
+
+    #[ORM\OneToMany(mappedBy: 'idAppart', targetEntity: Parking::class)]
+    private Collection $parkings;
 
     public function __construct()
     {
@@ -71,28 +73,6 @@ class Appartement
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
-
-        return $this;
-    }
-
-    public function getParking(): ?Parking
-    {
-        return $this->parking;
-    }
-
-    public function setParking(?Parking $parking): self
-    {
-        // unset the owning side of the relation if necessary
-        if ($parking === null && $this->parking !== null) {
-            $this->parking->setIdAppart(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($parking !== null && $parking->getIdAppart() !== $this) {
-            $parking->setIdAppart($this);
-        }
-
-        $this->parking = $parking;
 
         return $this;
     }
@@ -230,6 +210,36 @@ class Appartement
             // set the owning side to null (unless already changed)
             if ($poubelle->getIdAppart() === $this) {
                 $poubelle->setIdAppart(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Parking>
+     */
+    public function getParkings(): Collection
+    {
+        return $this->parkings;
+    }
+
+    public function addparking(Parking $parking): self
+    {
+        if (!$this->parkings->contains($parking)) {
+            $this->parkings->add($parking);
+            $parking->setIdAppart($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParking(Parking $parking): self
+    {
+        if ($this->parkings->removeElement($parking)) {
+            // set the owning side to null (unless already changed)
+            if ($parking->getIdAppart() === $this) {
+                $parking->setIdAppart(null);
             }
         }
 

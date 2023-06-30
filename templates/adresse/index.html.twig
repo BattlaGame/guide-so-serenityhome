@@ -4,6 +4,7 @@
 
 {% block body %}
     <h1>Adresse index</h1>
+    <a href="{{ path('app_appartement_index') }}">Liste des appartements</a>
 
     <table class="table">
         <thead>
@@ -12,6 +13,7 @@
                 <th>Ville</th>
                 <th>Rue</th>
                 <th>Lien</th>
+                <th>Appartement</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +24,7 @@
                 <td>{{ adresse.ville }}</td>
                 <td>{{ adresse.rue }}</td>
                 <td>{{ adresse.lien }}</td>
+                <td>{{ adresse.idAppart }}</td>
                 <td>
                     <a href="{{ path('app_adresse_show', {'id': adresse.id}) }}">show</a>
                     <a href="{{ path('app_adresse_edit', {'id': adresse.id}) }}">edit</a>
