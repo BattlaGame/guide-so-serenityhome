@@ -17,7 +17,7 @@ class SiteFrontController extends AbstractController
         ]);
     }
 
-    #[Route('/{nom}/listeElec', name: 'app_appartement_listeElec', methods: ['GET'])]
+    #[Route('/{nom}/Electromenager', name: 'app_appartement_listeElec', methods: ['GET'])]
     public function listeElec(Appartement $appartement): Response
     {
         return $this->render('siteFront/listeElectromenager.html.twig', [
@@ -25,7 +25,7 @@ class SiteFrontController extends AbstractController
         ]);
     }
 
-    #[Route('/{nom}/listeCheckin', name: 'app_appartement_listeCheckin', methods: ['GET'])]
+    #[Route('/{nom}/Checkin', name: 'app_appartement_listeCheckin', methods: ['GET'])]
     public function listeCheckin(Appartement $appartement): Response
     {
         return $this->render('siteFront/listeCheckin.html.twig', [
@@ -33,15 +33,7 @@ class SiteFrontController extends AbstractController
         ]);
     }
 
-    #[Route('/{nom}/listePoubelle', name: 'app_appartement_listePoubelle', methods: ['GET'])]
-    public function listePoubelle(Appartement $appartement): Response
-    {
-        return $this->render('siteFront/listePoubelle.html.twig', [
-            'appartement' => $appartement,
-        ]);
-    }
-
-    #[Route('/{nom}/info', name: 'app_appartement_info', methods: ['GET'])]
+    #[Route('/{nom}/Info', name: 'app_appartement_info', methods: ['GET'])]
     public function info(Appartement $appartement): Response
     {
         return $this->render('siteFront/info.html.twig', [
@@ -49,7 +41,7 @@ class SiteFrontController extends AbstractController
         ]);
     }
 
-    #[Route(' /{nom}/numero', name: 'app_appartement_numero', methods: ['GET'])]
+    #[Route(' /{nom}/Numero', name: 'app_appartement_numero', methods: ['GET'])]
     public function numero(Appartement $appartement): Response
     {
         return $this->render('siteFront/numero.html.twig', [
@@ -57,7 +49,7 @@ class SiteFrontController extends AbstractController
         ]);
     }
 
-    #[Route('/{nom}/checkout', name: 'app_appartement_checkout', methods: ['GET'])]
+    #[Route('/{nom}/Checkout', name: 'app_appartement_checkout', methods: ['GET'])]
     public function checkout(Appartement $appartement): Response
     {
         return $this->render('siteFront/checkout.html.twig', [
@@ -65,7 +57,7 @@ class SiteFrontController extends AbstractController
         ]);
     }
 
-    #[Route('/{nom}/autour', name: 'app_appartement_autour', methods: ['GET'])]
+    #[Route('/{nom}/Autour', name: 'app_appartement_autour', methods: ['GET'])]
     public function autour(Appartement $appartement): Response
     {
         return $this->render('siteFront/autour.html.twig', [
@@ -73,7 +65,7 @@ class SiteFrontController extends AbstractController
         ]);
     }
 
-    #[Route('/{nom}/wifi', name: 'app_appartement_wifi', methods: ['GET'])]
+    #[Route('/{nom}/Wifi', name: 'app_appartement_wifi', methods: ['GET'])]
     public function wifi(Appartement $appartement): Response
     {
         return $this->render('siteFront/wifi.html.twig', [
@@ -81,7 +73,7 @@ class SiteFrontController extends AbstractController
         ]);
     }
 
-    #[Route('/{nom}/parking', name: 'app_appartement_parking', methods: ['GET'])]
+    #[Route('/{nom}/Parking', name: 'app_appartement_parking', methods: ['GET'])]
     public function parking(Appartement $appartement): Response
     {
         return $this->render('siteFront/parking.html.twig', [
