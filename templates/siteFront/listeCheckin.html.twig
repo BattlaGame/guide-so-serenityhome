@@ -16,6 +16,7 @@
                 </div>
                 {% for checkin in appartement.checkins %}
                     <div class="shadow-container item-center text-center">
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">{{ checkin.nom }}</p>
                         <img  src= {{ checkin.photo }} width="100px">
                         <p class="nmt nmb color-yellow ml-2 bold-600 font-1">{{ checkin.description }}</p>
                     </div>
