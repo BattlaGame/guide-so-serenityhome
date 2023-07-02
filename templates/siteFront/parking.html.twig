@@ -14,7 +14,7 @@
                     <img  class="" src= {{asset('assets/picture/icon/car.png')}} width="62px">
                     <p class="bold-700 font-2 color-bluelight no-margin">Parking</p>
                 </div>
-                {% for parking in appartement.parking %}
+                {% for parking in appartement.parkings %}
                     <div class="shadow-container item-center text-center">
                         <img  src= {{ parking.photo }} width="100px">
                         <p class="nmt nmb color-yellow ml-2 bold-600 font-1">{{ parking.description }}</p>

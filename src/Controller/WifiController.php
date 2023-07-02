@@ -41,15 +41,6 @@ class WifiController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_wifi_show', methods: ['GET'])]
-    public function show(Wifi $wifi): Response
-    {
-        return $this->render('siteFront/wifi.html.twig', [
-            'wifi' => $wifi,
-            'test' => $wifi
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_wifi_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Wifi $wifi, WifiRepository $wifiRepository): Response
     {

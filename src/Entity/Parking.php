@@ -19,7 +19,7 @@ class Parking
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
 
-    #[ORM\OneToOne(inversedBy: 'parking', cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'parkings')]
     private ?Appartement $idAppart = null;
 
     public function getId(): ?int

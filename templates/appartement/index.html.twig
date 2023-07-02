@@ -12,7 +12,14 @@
                 <th>Nom</th>
                 <th>Photo</th>
                 <th>Adresse</th>
-                <th>actions</th>
+                <th>Action</th>
+                <th><a href="{{ path('app_adresse_index') }}">Adresse</a></th>
+                <th><a href="{{ path('app_wifi_index') }}">Wifi</a></th>
+                <th><a href="{{ path('app_electromenager_index') }}">Electromenager</a></th>
+                <th><a href="{{ path('app_parking_index') }}">Parking</a></th>
+                <th><a href="{{ path('app_checkin_index') }}">Checkin</a></th>
+                <th><a href="{{ path('app_poubelle_index') }}">Poubelle</a></th>
+               
             </tr>
         </thead>
         <tbody>
@@ -22,17 +29,18 @@
                 <td>{{ appartement.nom }}</td>
                 <td>{{ appartement.photo }}</td>
                 <td>{{ appartement.adresse }}</td>
-                <td>
-                    <a href="{{ path('app_appartement_show', {'id': appartement.id}) }}">Voir</a>
-                    <a href="{{ path('app_appartement_edit', {'id': appartement.id}) }}">Editer</a>
-                    <a href="{{ path('app_adresse_show', {'id': appartement.adresse.id}) }}">Adresse</a>
-                    <a href="{{ path('app_wifi_show', {'id': appartement.wifi.id}) }}">Wifi</a>
-                    <a href="{{ path('app_appartement_listeElec', {'id': appartement.id}) }}">Electromenager</a>
-                    <a href="{{ path('app_parking_show', {'id': appartement.parking.id}) }}">Parking</a>
-                    <a href="{{ path('app_appartement_listeCheckin', {'id': appartement.id}) }}">Checkin</a>
-                    <a href="{{ path('app_poubelle_show', {'id': appartement.poubelle.id}) }}">Poubelle</a>
-                </td>
+                <td><a href="{{ path('app_appartement_edit', {'id': appartement.id}) }}">Editer</a></td>
+                <td><a href="{{ path('app_adresse_show', {'id': appartement.adresse.id}) }}">Adresse</a></td>
+                <td><a href="{{ path('app_appartement_wifi', {'nom': appartement.nom}) }}">Wifi</a></td>
+                <td><a href="{{ path('app_appartement_listeElec', {'nom': appartement.nom}) }}">Electromenager</a></td>
+                <td><a href="{{ path('app_appartement_parking', {'nom': appartement.nom}) }}">Parking</a></td>
+                <td><a href="{{ path('app_appartement_listeCheckin', {'nom': appartement.nom}) }}">Checkin</a></td>
+                <td><a href="{{ path('app_appartement_info', {'nom': appartement.nom}) }}">Poubelle</a></td>
+                <td><a href="{{ path('app_appartement_show', {'nom': appartement.nom}) }}">Voir</a></td>
+                
+                
             </tr>
+            
         {% else %}
             <tr>
                 <td colspan="4">no records found</td>

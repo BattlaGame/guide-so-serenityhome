@@ -12,8 +12,9 @@ class PoubelleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('photo')
+            ->add('nom')
             ->add('description')
+            ->add('photo')
             ->add('idAppart')
         ;
     }

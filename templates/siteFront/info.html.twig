@@ -49,7 +49,14 @@
                     </div>
                 </div>
                 <div class="shadow-container item-center">
-                    <p class="nmt nmb color-yellow bold-600 font-1 ml-2">+33 6 84 64 25 86</p>
+                    {% for poubelle in appartement.poubelles %}
+                    <p class="nmt nmb color-yellow bold-600 font-1 ml-2">{{ poubelle.nom }}</p>
+                    <img  src= {{ poubelle.photo }} width="100px">
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">{{ poubelle.description }}</p>
+                    {% else %}
+
+                    {% endfor %}
+
                 </div>
                 <div class="same-line mb-1 item-center" id="planete">
                     <img  class="" src= {{asset('assets/picture/icon/earth.png')}} width="62px">

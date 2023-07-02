@@ -6,7 +6,7 @@
     <div class=" mt-5">
         <div class="text-center">
             <img  src= {{asset('assets/picture/icon/checkin-white.png')}} width="50px">
-            <p class="color-white font-1 bold-700 no-margin">Parking</p>
+            <p class="color-white font-1 bold-700 no-margin">Checkin</p>
         </div>
         <div class="container">
             <div class="div-50 margin-auto">
@@ -16,6 +16,7 @@
                 </div>
                 {% for checkin in appartement.checkins %}
                     <div class="shadow-container item-center text-center">
+                    <p class="nmt nmb color-yellow ml-2 bold-600 font-1">{{ checkin.nom }}</p>
                         <img  src= {{ checkin.photo }} width="100px">
                         <p class="nmt nmb color-yellow ml-2 bold-600 font-1">{{ checkin.description }}</p>
                     </div>

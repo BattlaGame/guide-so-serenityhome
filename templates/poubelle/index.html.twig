@@ -4,13 +4,16 @@
 
 {% block body %}
     <h1>Poubelle index</h1>
+    <a href="{{ path('app_appartement_index') }}">Liste des appartements</a>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Photo</th>
+                <th>Nom</th>
                 <th>Description</th>
+                <th>Photo</th>
+                <th>Appartement</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,8 +21,10 @@
         {% for poubelle in poubelles %}
             <tr>
                 <td>{{ poubelle.id }}</td>
-                <td>{{ poubelle.photo }}</td>
+                <td>{{ poubelle.nom }}</td>
                 <td>{{ poubelle.description }}</td>
+                <td>{{ poubelle.photo }}</td>
+                <td>{{ poubelle.idAppart }}</td>
                 <td>
                     <a href="{{ path('app_poubelle_show', {'id': poubelle.id}) }}">show</a>
                     <a href="{{ path('app_poubelle_edit', {'id': poubelle.id}) }}">edit</a>
@@ -27,7 +32,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

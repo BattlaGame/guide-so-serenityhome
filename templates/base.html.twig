@@ -25,18 +25,15 @@
 
 {% if appartement|default(null) is not null %}
 
-<body style="background-image: url('{{ appartement.photo }}');" class="">
-
+    <body style="background-image: url('{{ appartement.photo }}');" class="">
+    <a href="{{ path('app_appartement_show', {'nom': appartement.nom}) }}"><img class="prev-button mt-1" src= {{asset('assets/picture/fleche-retour.png')}} width=50px></a>
+    
 {% else %}
-    {% if test.idAppart|default(null) is not null %}
-        <body style="background-image: url('{{ test.idAppart.photo }}');" class="">
-    {% else %}
-        <body>
-    {% endif %}
+    <body>
 {% endif %}
 
     <!-- Topbar Start -->
-    <a href="/appartement"><img class="prev-button mt-1" src= {{asset('assets/picture/fleche-retour.png')}} width=50px></a>
+    
     <!-- Topbar End -->
 
     {% block body %}
