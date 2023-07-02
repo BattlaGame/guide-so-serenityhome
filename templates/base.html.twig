@@ -26,7 +26,8 @@
 {% if appartement|default(null) is not null %}
 
     <body style="background-image: url('{{ appartement.photo }}');" class="">
-    <a href="{{ path('app_appartement_show', {'nom': appartement.nom}) }}"><img class="prev-button mt-1" src= {{asset('assets/picture/fleche-retour.png')}} width=50px></a>
+    <a href="{{ path('app_appartement_show', {'nom': appartement.nom}) }}">
+    <img class="prev-button mt-1" src= {{asset('assets/picture/fleche-retour.png')}} width=50px></a>
     
 {% else %}
     <body>
